@@ -1,11 +1,11 @@
 .navbar{
-    background-color: antiquewhite;
+    background-color: blanchedalmond;
 }
 .container-fluid{
     display: flex;
     justify-content: space-between;
 }
-img{
+.navbar img{
     width: 200px;
 }
 .banner{
@@ -19,4 +19,29 @@ img{
 h1, a{
     padding: 1rem;
     text-align: center;
+}
+.divcartas{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3rem 0;
+}
+.card{
+    margin: 0rem;
+}
+footer{
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: space-between;
+}
+.divfooter1 img{
+    width: 40px;
+}
+.divfooter1{
+    display: flex;
+    justify-content: center;
+}
+.divfooter2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
