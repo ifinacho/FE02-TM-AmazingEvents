@@ -37,23 +37,27 @@
             </div>
             <a class="col-1" href="./stats.html"><img src="./assets/signos-de-mayor-que.png" alt="flecha-derecha"></a>      
         </div>
-        <form action="" method="GET">
-          <fieldset>
-            <label>
-              <p>Name:</p>
-              <input type="text" name="nombre">
-            </label>
-            <label>
-              <p>Email:</p>
-              <input type="email" name="email">
-            </label>
-            <label>
-              <p>Message:</p>
-              <textarea name="bio" placeholder="Leave your message"></textarea>
-            </label>
-          </fieldset>
-          <input type="submit" value="Submit">
-        </form>
+        <div class="form">
+          <form action="" method="GET" class="col-3">
+            <fieldset>
+              <label>
+                <p>Name:</p>
+                <input type="text" name="name">
+              </label>
+              <label>
+                <p>Email:</p>
+                <input type="email" name="email">
+              </label>
+              <label>
+                <p>Message:</p>
+                <textarea name="message" rows="5" placeholder="Leave your message..."></textarea>
+              </label>
+            </fieldset>
+            <div id="submit">
+              <input type="submit" value="Submit" class="submit">
+            </div>
+          </form>
+        </div>
     </main>
     <footer>
       <div class="divfooter1 col-3">

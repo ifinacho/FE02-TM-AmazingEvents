@@ -50,12 +50,29 @@ footer{
     justify-content: center;
     align-items: center;
 }
-form{    
+.form{
+    background-color: rgb(247, 247, 247); 
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
+form{
+    background-color: rgb(168, 165, 206);
+    margin: 2rem;
+    border: 2px solid rgb(9, 3, 95);
+    padding: 1rem;
+}
 fieldset label{
     display: block;
+}
+form p{
+    margin: 0;
+}
+label>input, label>textarea{
+    width: 100%;
+}
+#submit{
+    display: flex;
+    justify-content: flex-end;
 }
