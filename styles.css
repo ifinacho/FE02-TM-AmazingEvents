@@ -3,12 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-.navbar{
+header>.navbar{
     background-color: blanchedalmond;
-}
-.container-fluid{
-    display: flex;
-    justify-content: space-between;
 }
 .navbar img{
     width: 200px;
@@ -24,6 +20,19 @@
 h1, a{
     padding: 1rem;
     text-align: center;
+}
+#navbar{
+    margin: 0rem 2rem;
+}
+.fieldset{
+    display: flex;
+}
+.fieldset>label{
+    display: flex;
+    margin: 1rem;
+}
+span{
+    margin: 5px;
 }
 .divcartas{
     display: flex;
@@ -50,15 +59,21 @@ footer{
     justify-content: center;
     align-items: center;
 }
-.form{
+
+
+/*Styles para Contact us*/
+
+
+
+.contactform{
     background-color: rgb(247, 247, 247); 
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
-form{
-    background-color: rgb(168, 165, 206);
+.contactform>form{
+    background-color: rgb(210, 208, 238);
     margin: 2rem;
     border: 2px solid rgb(9, 3, 95);
     padding: 1rem;
@@ -75,4 +90,32 @@ label>input, label>textarea{
 #submit{
     display: flex;
     justify-content: flex-end;
+}
+
+
+/*Styles para Stats*/
+
+
+
+.tables{
+    background-color: rgb(247, 247, 247);
+    padding: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+table{
+    background-color: white;
+    border: 1px solid black;
+}
+caption{
+    font-size: x-large;
+    caption-side: top;
+    background-color: bisque;
+    border: 1px solid black;
+    padding: 1rem 0;
+}
+tr th,tr td{
+    border: 1px solid black;
 }
