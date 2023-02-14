@@ -6,20 +6,40 @@
 header>.navbar{
     background-color: blanchedalmond;
 }
-.navbar img{
-    width: 200px;
+.navbar>.container-fluid{
+    display: flex;
+    justify-content: space-between;
 }
+.navbar img{
+    width: 300px;
+}
+
+
+/*Styles para el banner*/
+
+
+
 .banner{
     background-color: rgb(243, 205, 205);
     display: flex;
     justify-content: center;
 }
-.banner img{
-    width: 50px;
+.banner a{
+    font-size: xx-large;
+    text-decoration: none;
 }
 h1, a{
     padding: 1rem;
     text-align: center;
+}
+
+
+
+/*Styles para checkbox y search*/
+
+
+.navbar, .divcartas{
+    background-color: rgb(247, 247, 247);
 }
 #navbar{
     margin: 0rem 2rem;
@@ -34,14 +54,37 @@ h1, a{
 span{
     margin: 5px;
 }
+
+
+
+/*Styles para las cartas*/
+
+
+
 .divcartas{
     display: flex;
     justify-content: space-evenly;
     padding: 3rem 0;
 }
-.card{
+.divcartas>.card{
     margin: 0rem;
 }
+.divcartas .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.divcardbody{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/*Styles para el footer*/
+
+
+
 footer{
     background-color: blanchedalmond;
     display: flex;
@@ -118,4 +161,23 @@ caption{
 }
 tr th,tr td{
     border: 1px solid black;
+}
+
+
+
+/*Styles para details*/
+
+
+
+.maindetails{
+    background-color: rgb(247, 247, 247);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.maindetails>.card{
+    margin: 3rem !important;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
 }
