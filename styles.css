@@ -143,10 +143,10 @@ footer{
     padding: 1rem;
     border-radius: 5px;
 }
-fieldset label{
+fieldset label, fieldset span{
     display: block;
 }
-form p{
+form span{
     margin: 0;
 }
 label>input, label>textarea{
