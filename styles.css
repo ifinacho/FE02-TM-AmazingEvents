@@ -3,16 +3,36 @@
     padding: 0;
     box-sizing: border-box;
 }
-header>.navbar{
+header>div{
     background-color: blanchedalmond;
-}
-.navbar>.container-fluid{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    padding: 10px 2rem;
 }
-.navbar img{
-    width: 300px;
+.divnavimg img{
+    max-width: 100%;
 }
+.divnavbar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.divnavbar a{
+    color: rgb(97, 97, 97);
+    background-color: aliceblue;
+    margin: 10px;
+    padding: 4px 1rem 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.divnavbar a:hover{
+    background-color: rgb(201, 201, 255);
+}
+.divnavbar>.active{
+    color: black;
+}
+
 
 
 /*Styles para el banner*/
@@ -42,10 +62,11 @@ h1, a{
     background-color: rgb(247, 247, 247);
 }
 #navbar{
-    margin: 0rem 2rem;
+    padding: 1rem 2rem;
 }
 .fieldset{
     display: flex;
+    flex-wrap: wrap;
 }
 .fieldset>label{
     display: flex;
@@ -63,11 +84,10 @@ span{
 
 .divcartas{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 3rem 0;
-}
-.divcartas>.card{
-    margin: 0rem;
+    gap: 1rem;
 }
 .divcartas .card-body{
     display: flex;
@@ -104,6 +124,7 @@ footer{
 }
 
 
+
 /*Styles para Contact us*/
 
 
@@ -120,6 +141,7 @@ footer{
     margin: 2rem;
     border: 2px solid rgb(9, 3, 95);
     padding: 1rem;
+    border-radius: 5px;
 }
 fieldset label{
     display: block;
@@ -133,7 +155,12 @@ label>input, label>textarea{
 #submit{
     display: flex;
     justify-content: flex-end;
+    margin-top: 1rem;
 }
+#submit input{
+    padding: 0 5px;
+}
+
 
 
 /*Styles para Stats*/
@@ -157,7 +184,7 @@ caption{
     caption-side: top;
     background-color: bisque;
     border: 1px solid black;
-    padding: 1rem 0;
+    padding:21rem 0;
 }
 tr th,tr td{
     border: 1px solid black;
@@ -177,7 +204,7 @@ tr th,tr td{
 }
 .maindetails>.card{
     margin: 3rem !important;
-    padding: 1rem;
     border: 1px solid black;
+    padding: 1rem;
     border-radius: 1rem;
 }
