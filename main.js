@@ -1,7 +1,7 @@
 let htmlCards = ""
-for(let event in data.events){
+for (let event of data.events) {
     htmlCards += createCard(event);
-}
+};
 document.querySelector(".divcartas").innerHTML += htmlCards
 
 
