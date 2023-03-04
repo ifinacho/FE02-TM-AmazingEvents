@@ -89,8 +89,12 @@ span{
     padding: 3rem 0;
     gap: 1rem;
 }
+.card{
+    margin-bottom: 1rem;
+}
 .divcartas .card-body{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: flex-end;
 }
