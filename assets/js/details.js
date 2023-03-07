@@ -3,7 +3,7 @@ const parametros = new URLSearchParams(searchString)
 const id = parametros.get('id')
 const evento = data.events.find(event => event._id == id)
 let arrayKeys = Object.keys(evento)
-resultado = ""
+let resultado = ""
 if(arrayKeys.includes("estimate")){
     resultado = "Estimate: " + evento.estimate
 }else{
