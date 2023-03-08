@@ -11,5 +11,19 @@ categorias.forEach(categoria => {
 })
 
 
+let inputSearch = document.getElementById("formsearch")
+document.querySelector(".form-search").onsubmit = (e) => {
+    e.preventDefault()
+    let resultadoBusqueda = ""
+    let textoIngresado = inputSearch.value.toLowerCase().trim()
+    for(let event of data.events){
+        if(event.name.toLowerCase().includes(textoIngresado)||event.description.toLowerCase().includes(textoIngresado)){
+            resultadoBusqueda += createCard(event)
+        }
+    }
+    document.querySelector(".divcartas").innerHTML += resultadoBusqueda
+}
+
+
 
 

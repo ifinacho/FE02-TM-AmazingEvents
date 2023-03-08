@@ -202,7 +202,7 @@ let categorias = categoriasRepetidas.reduce((acumulador,item)=>{
     return acumulador;
   },[])
 
-  
+
 function createLabel(categoria){
   let label = 
   `<label>
