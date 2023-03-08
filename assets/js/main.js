@@ -2,7 +2,7 @@ let htmlCards = ""
 for (let event of data.events) {
     htmlCards += createCard(event);
 };
-document.querySelector(".divcartas").innerHTML += htmlCards
+document.querySelector(".divcartas").innerHTML = htmlCards
 
 
 
@@ -17,11 +17,11 @@ document.querySelector(".form-search").onsubmit = (e) => {
     let resultadoBusqueda = ""
     let textoIngresado = inputSearch.value.toLowerCase().trim()
     for(let event of data.events){
-        if(event.name.toLowerCase().includes(textoIngresado)||event.description.toLowerCase().includes(textoIngresado)){
+        if(event.name.toLowerCase().includes(textoIngresado)||event.description.toLowerCase().includes(textoIngresado)||event.category.toLowerCase().includes(textoIngresado)||event.place.toLowerCase().includes(textoIngresado)){
             resultadoBusqueda += createCard(event)
         }
     }
-    document.querySelector(".divcartas").innerHTML += resultadoBusqueda
+    document.querySelector(".divcartas").innerHTML = resultadoBusqueda
 }
 
 
