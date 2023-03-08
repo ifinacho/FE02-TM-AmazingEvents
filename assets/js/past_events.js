@@ -7,3 +7,9 @@ for (let event of data.events) {
     };
 };
 document.querySelector(".divcartas").innerHTML += htmlCards
+
+
+
+categorias.forEach(categoria => {
+    document.querySelector(".fieldset").innerHTML += createLabel(categoria)
+})

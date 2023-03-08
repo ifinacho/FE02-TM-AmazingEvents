@@ -188,3 +188,26 @@ function createCard(event){
   </div>`
   return card
 }
+
+
+let categoriasRepetidas = []
+data.events.forEach(event => {
+    categoriasRepetidas.push(event.category)
+})
+
+let categorias = categoriasRepetidas.reduce((acumulador,item)=>{
+    if(!acumulador.includes(item)){
+      acumulador.push(item);
+    }
+    return acumulador;
+  },[])
+
+  
+function createLabel(categoria){
+  let label = 
+  `<label>
+    <input type="checkbox" name="category" value="${categoria.toLowerCase().replace(" ", "-")}">
+    <span>${categoria}</span>
+  </label>`
+  return label
+}

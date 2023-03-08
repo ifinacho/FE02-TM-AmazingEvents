@@ -70,7 +70,8 @@ h1, a{
 }
 .fieldset>label{
     display: flex;
-    margin: 1rem;
+    align-items: center;
+    padding: 0.5rem;
 }
 span{
     margin: 5px;
