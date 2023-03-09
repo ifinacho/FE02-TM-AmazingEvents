@@ -32,7 +32,7 @@ inputCheckbox.forEach(checkbox => checkbox.addEventListener('click', () => {
     if(checkbox.checked) {
         for(let event of data.events){
             if(event.category.toLowerCase().replace(" ", "-")==checkbox.value){
-                resultadoCheckbox = createCard(event)
+                resultadoCheckbox += createCard(event)
             }
         }
     }
