@@ -17,13 +17,28 @@ document.querySelector(".form-search").onsubmit = (e) => {
     let resultadoBusqueda = ""
     let textoIngresado = inputSearch.value.toLowerCase().trim()
     for(let event of data.events){
-        if(event.name.toLowerCase().includes(textoIngresado)||event.description.toLowerCase().includes(textoIngresado)||event.category.toLowerCase().includes(textoIngresado)||event.place.toLowerCase().includes(textoIngresado)){
+        if(event.name.toLowerCase().includes(textoIngresado)||event.description.toLowerCase().includes(textoIngresado)||event.place.toLowerCase().includes(textoIngresado)){
             resultadoBusqueda += createCard(event)
         }
     }
     document.querySelector(".divcartas").innerHTML = resultadoBusqueda
 }
 
+
+let labels = document.querySelectorAll("label")
+let inputCheckbox = document.querySelectorAll("input[type=checkbox]")
+let resultadoCheckbox = ""
+inputCheckbox.forEach(checkbox => checkbox.addEventListener('click', () => {
+    if(checkbox.checked) {
+        for(let event of data.events){
+            if(event.category.toLowerCase().replace(" ", "-")==checkbox.value){
+                resultadoCheckbox = createCard(event)
+            }
+        }
+    }
+    document.querySelector(".divcartas").innerHTML = resultadoCheckbox
+    })
+)
 
 
 

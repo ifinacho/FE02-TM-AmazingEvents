@@ -93,6 +93,10 @@ span{
 .card{
     margin-bottom: 1rem;
 }
+.card-img-top{
+    object-fit: cover;
+    max-height: 10rem;
+}
 .card-body{
     display: flex;
     flex-direction: column;
