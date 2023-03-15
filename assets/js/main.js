@@ -31,7 +31,7 @@ let resultadoCheckbox = ""
 inputCheckbox.forEach(checkbox => checkbox.addEventListener('click', () => {
     if(checkbox.checked) {
         for(let event of data.events){
-            if(event.category.toLowerCase().replace(" ", "-")==checkbox.value){
+            if(event.category==checkbox.value){
                 resultadoCheckbox += createCard(event)
             }
         }

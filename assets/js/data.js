@@ -206,7 +206,7 @@ let categorias = categoriasRepetidas.reduce((acumulador,item)=>{
 function createLabel(categoria){
   let label = 
   `<label>
-    <input type="checkbox" name="category" value="${categoria.toLowerCase().replace(" ", "-")}">
+    <input type="checkbox" name="category" value="${categoria}">
     <span>${categoria}</span>
   </label>`
   return label
