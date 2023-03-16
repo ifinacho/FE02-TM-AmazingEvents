@@ -25,20 +25,22 @@ document.querySelector(".form-search").onsubmit = (e) => {
 }
 
 
-let labels = document.querySelectorAll("label")
-let inputCheckbox = document.querySelectorAll("input[type=checkbox]")
 let resultadoCheckbox = ""
-inputCheckbox.forEach(checkbox => checkbox.addEventListener('click', () => {
-    if(checkbox.checked) {
-        for(let event of data.events){
-            if(event.category==checkbox.value){
-                resultadoCheckbox += createCard(event)
-            }
-        }
+categorias.forEach(categoria => document.getElementById(categoria).addEventListener('change', () => {
+    let checked = categorias.filter(categoria => document.getElementById(categoria).checked)
+    let filteredEvents = []
+    if(checked.length == 0) {
+        filteredEvents = data.events
+    }else{
+        filteredEvents = data.events.filter(event => checked.includes(event.category))
     }
+    resultadoCheckbox = filteredEvents.map(filteredEvent => createCard(filteredEvent)).join("")
     document.querySelector(".divcartas").innerHTML = resultadoCheckbox
-    })
+    }
+
+    )     
 )
+
 
 
 
