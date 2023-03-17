@@ -1,9 +1,13 @@
-let htmlCards = ""
-for (let event of data.events) {
-    htmlCards += createCard(event);
-};
-document.querySelector(".divcartas").innerHTML = htmlCards
-
+function displayEvents(events){
+    let htmlCards = ""
+    let arrayEvents = []
+    events.forEach(event => {
+        arrayEvents.push(event)
+    })
+    htmlCards = arrayEvents.map(arrayEvent => createCard(arrayEvent)).join("")
+    document.querySelector(".divcartas").innerHTML = htmlCards
+}
+displayEvents(data.events)
 
 
 categorias.forEach(categoria => {
@@ -11,21 +15,6 @@ categorias.forEach(categoria => {
 })
 
 
-let inputSearch = document.getElementById("formsearch")
-document.querySelector(".form-search").onsubmit = (e) => {
-    e.preventDefault()
-    let resultadoBusqueda = ""
-    let textoIngresado = inputSearch.value.toLowerCase().trim()
-    for(let event of data.events){
-        if(event.name.toLowerCase().includes(textoIngresado)||event.description.toLowerCase().includes(textoIngresado)||event.place.toLowerCase().includes(textoIngresado)){
-            resultadoBusqueda += createCard(event)
-        }
-    }
-    document.querySelector(".divcartas").innerHTML = resultadoBusqueda
-}
-
-
-let resultadoCheckbox = ""
 categorias.forEach(categoria => document.getElementById(categoria).addEventListener('change', () => {
     let checked = categorias.filter(categoria => document.getElementById(categoria).checked)
     let filteredEvents = []
@@ -34,13 +23,16 @@ categorias.forEach(categoria => document.getElementById(categoria).addEventListe
     }else{
         filteredEvents = data.events.filter(event => checked.includes(event.category))
     }
-    resultadoCheckbox = filteredEvents.map(filteredEvent => createCard(filteredEvent)).join("")
-    document.querySelector(".divcartas").innerHTML = resultadoCheckbox
+    displayEvents(filteredEvents)
     }
 
     )     
 )
 
 
-
+let inputSearch = document.getElementById("formsearch")
+inputSearch.addEventListener("keyup", () => {
+    let filteredEvents = data.events.filter(event => event.name.toLowerCase().includes(inputSearch.value.toLowerCase().trim()))
+    displayEvents(filteredEvents)
+})
 
