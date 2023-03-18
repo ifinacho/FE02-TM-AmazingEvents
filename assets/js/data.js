@@ -211,3 +211,14 @@ function createLabel(categoria){
   </label>`
   return label
 }
+
+
+function displayEvents(events){
+  let htmlCards = ""
+  let arrayEvents = []
+  events.forEach(event => {
+      arrayEvents.push(event)
+  })
+  htmlCards = arrayEvents.map(arrayEvent => createCard(arrayEvent)).join("")
+  document.querySelector(".divcartas").innerHTML = htmlCards
+}

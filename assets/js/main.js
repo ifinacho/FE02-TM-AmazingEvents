@@ -1,12 +1,3 @@
-function displayEvents(events){
-    let htmlCards = ""
-    let arrayEvents = []
-    events.forEach(event => {
-        arrayEvents.push(event)
-    })
-    htmlCards = arrayEvents.map(arrayEvent => createCard(arrayEvent)).join("")
-    document.querySelector(".divcartas").innerHTML = htmlCards
-}
 displayEvents(data.events)
 
 
@@ -32,7 +23,10 @@ categorias.forEach(categoria => document.getElementById(categoria).addEventListe
 
 let inputSearch = document.getElementById("formsearch")
 inputSearch.addEventListener("keyup", () => {
-    let filteredEvents = data.events.filter(event => event.name.toLowerCase().includes(inputSearch.value.toLowerCase().trim()))
+    let filteredEvents = data.events.filter(event => event.name.toLowerCase().includes(inputSearch.value.toLowerCase().trim()) || event.description.toLowerCase().includes(inputSearch.value.toLowerCase().trim()))
     displayEvents(filteredEvents)
+    if(filteredEvents.length == 0){
+        document.querySelector(".divcartas").innerHTML = `<div><p>No hay resultados</p></div>`
+    }
 })
 
