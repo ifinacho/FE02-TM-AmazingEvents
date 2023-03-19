@@ -1,3 +1,5 @@
+let data = JSON.parse(localStorage.getItem("data"));
+
 const searchString = location.search
 const parametros = new URLSearchParams(searchString)
 const id = parametros.get('id')

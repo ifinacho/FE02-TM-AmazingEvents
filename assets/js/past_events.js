@@ -1,3 +1,5 @@
+let data = JSON.parse(localStorage.getItem("data"));
+
 let pastEvents = []
 let currentDate = new Date(data.currentDate);
 for (let event of data.events) {
@@ -8,7 +10,7 @@ for (let event of data.events) {
 };
 displayEvents(pastEvents)
 
-
+let categorias = obtenerCategorias(data)
 
 categorias.forEach(categoria => {
     document.querySelector(".fieldset").innerHTML += createLabel(categoria)

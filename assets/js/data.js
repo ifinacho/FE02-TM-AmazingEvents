@@ -1,4 +1,4 @@
-let data = {
+/*let data = {
     "currentDate": "2022-01-01",
     "events": [
       {
@@ -171,6 +171,12 @@ let data = {
       }
     ]
   };
+*/
+let urlApi = "https://mindhub-xj03.onrender.com/api/amazing"
+async function getData(){
+  await fetch(urlApi).then(response => response.json()).then(data => localStorage.setItem("data", JSON.stringify(data))).catch(error => console.log(error))
+}
+
 
 
 function createCard(event){
@@ -189,19 +195,20 @@ function createCard(event){
   return card
 }
 
+function obtenerCategorias(data){  
+  let categoriasRepetidas = []
+  data.events.forEach(event => {
+      categoriasRepetidas.push(event.category)
+  })
 
-let categoriasRepetidas = []
-data.events.forEach(event => {
-    categoriasRepetidas.push(event.category)
-})
-
-let categorias = categoriasRepetidas.reduce((acumulador,item)=>{
-    if(!acumulador.includes(item)){
-      acumulador.push(item);
-    }
-    return acumulador;
-  },[])
-
+  let categorias = categoriasRepetidas.reduce((acumulador,item)=>{
+      if(!acumulador.includes(item)){
+        acumulador.push(item);
+      }
+      return acumulador;
+    },[])
+  return categorias
+}
 
 function createLabel(categoria){
   let label = 
@@ -215,10 +222,6 @@ function createLabel(categoria){
 
 function displayEvents(events){
   let htmlCards = ""
-  let arrayEvents = []
-  events.forEach(event => {
-      arrayEvents.push(event)
-  })
-  htmlCards = arrayEvents.map(arrayEvent => createCard(arrayEvent)).join("")
+  htmlCards = events.map(event => createCard(event)).join("")
   document.querySelector(".divcartas").innerHTML = htmlCards
 }

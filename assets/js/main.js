@@ -1,10 +1,12 @@
+let data = JSON.parse(localStorage.getItem("data"));
+
 displayEvents(data.events)
 
+let categorias = obtenerCategorias(data)
 
 categorias.forEach(categoria => {
     document.querySelector(".fieldset").innerHTML += createLabel(categoria)
 })
-
 
 categorias.forEach(categoria => document.getElementById(categoria).addEventListener('change', () => {
     let checked = categorias.filter(categoria => document.getElementById(categoria).checked)
