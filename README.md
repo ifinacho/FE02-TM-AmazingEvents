@@ -1,1 +1,1 @@
-# FE02-TM-JavaScript
+MindHub - Desarrollo FrontEnd - Proyecto "Amazing Events" en JavaScript
